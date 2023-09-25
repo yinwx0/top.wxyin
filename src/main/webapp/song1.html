@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音乐盒子</title>
+    <!-- font-awesome -->
+    <link
+            href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/app.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body onload="load()" >
+<main>
+    <section class="container">
+        <!-- title -->
+        <div class="title">
+            <h2>音乐盒子</h2>
+            <div class="underline"></div>
+        </div>
+        <!-- review -->
+        <article class="review">
+            <div class="img-container">
+                <img src="" id="cover" alt="" />
+            </div>
+            <h4 id="singer"></h4>
+            <p id="name"></p>
+            <p id="lyric"></p>
+            <audio src="" controls id="path"></audio>
+            <!-- prev next buttons-->
+            <div class="button-container">
+                <button id="prev-btn">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <button id="next-btn">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+            <!-- random button -->
+            <button id="random-btn">随机</button>
+        </article>
+    </section>
+</main>
+<!-- javascript -->
+<!--<script src="./js/app.js"></script>-->
+<!--<script>-->
+<!--    let prevBtn = document.querySelector(".prev-btn");-->
+<!--    let nextBtn = document.querySelector(".next-btn");-->
+<!--    let randomBtn = document.querySelector(".random-btn");-->
+<!--    let songDiv = $("<div id='so'></div>");-->
+<!--    let aDiv = $("<div id='ad'></div>") ;-->
+<!--    var i = 0;-->
+<!--    let list;-->
+<!--    function load() {-->
+<!--        $.ajax({-->
+<!--            url:"/music/list",-->
+<!--            type:"post",-->
+<!--            dataType:"json",-->
+<!--            success: json => {-->
+<!--                $("so").remove();-->
+<!--                $("ad").remove();-->
+<!--                list = json.data.list;-->
+<!--                let song = list[i];-->
+<!--                songDiv.html(`-->
+<!--                    <div class="img-container">-->
+<!--                    <img src="images/${song.cover}" id="person-img" alt="" />-->
+<!--                    </div>-->
+<!--                    <h4 id="author">歌曲${song.name}</h4>-->
+<!--                    <p id="singer">歌手:${song.singer}</p>-->
+<!--                     <textarea contenteditable="false" placeholder="${song.lyric}"></textarea>-->
+<!--                    `)-->
+<!--                aDiv.html(`-->
+<!--                         <audio id="ad" class="mid" controls>-->
+<!--                             <source  src="mp3/${song.path}" type="audio/mpeg" />-->
+<!--                        </audio>-->
+<!--                    `)-->
+<!--                $("#cont").append(songDiv);-->
+<!--                $("#md").append(aDiv);-->
+<!--            }-->
+<!--        })-->
+<!--    }-->
+<!--    prevBtn.onclick = function() {-->
+<!--        if(i===0)-->
+<!--            i=list.length-1;-->
+<!--        else-->
+<!--            &#45;&#45;i;-->
+<!--        load();-->
+<!--    }-->
+<!--    nextBtn.onclick = function() {-->
+<!--        if(i===list.length-1)-->
+<!--            i=0;-->
+<!--        else-->
+<!--            ++i;-->
+<!--        load();-->
+<!--    }-->
+<!--    randomBtn.onclick=function() {-->
+<!--        i = Math.round(Math.random() * (list.length - 1))-->
+<!--        load();-->
+<!--    }-->
+<!--</script>-->
+</body>
+</html>

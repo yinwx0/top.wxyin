@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>song list</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/music.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .song-box{
+            background-color: #51AFB8;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+            display: flex;
+            border-radius: 8px;
+        }
+
+        .fl > .mask{
+            width: 200px;
+            height: 190px;
+            background-color: #2b2f32;
+            opacity: .7;
+            z-index: 2;
+            padding: 5px;
+        }
+
+        .fl > .mask:hover{
+            opacity:  .5;
+        }
+
+        .fr{
+            padding: 5px 10px;
+            text-align: left;
+        }
+
+        audio{
+            margin-top: 10px;
+            width: 220px;
+            height: 38px;
+            opacity: .5;
+        }
+    </style>
+</head>
+<body onload="load()" class="bg-white">
+<div class="w">
+    <div class="song-box">
+        <div class="fl">
+            <img src="./images" alt="" id="cover" width="180" height="180">
+        </div>
+        <div class="fr">
+            <h3 id="singer"></h3>
+            <p id="name"></p>
+            <p class="ellipsis" id="lyric"></p>
+            <audio src="./mp3" controls id="path"></audio>
+        </div>
+    </div>
+    <button id="prev-btn">前一首</button>
+    <button id="next-btn">后一首</button>
+    <button id="random-btn">随机</button>
+</div>
+</body>
+</html>
+
+<!--<div class="w song-box"></div>-->
+
+
+<!--<script>-->
+<!--    function load(){-->
+<!--        $.ajax({-->
+<!--            url:"/music/list",-->
+<!--            type:"get",-->
+<!--            dataType:"json",-->
+<!--            success: json =>{-->
+<!--                let list = json.data.list;-->
+<!--                for (let i=0;i<list.length;i++){-->
+<!--                    let song = list[i];-->
+
+<!--                    let songDiv = $("<div class='song-box'></div>");-->
+<!--                    songDiv.html(`-->
+<!--                        <div class="fl" style="background-image:url(images/${song.cover});background-size:100% 100%;">-->
+<!--                            <div class="mask"></div>-->
+<!--                        </div>-->
+<!--                        <div class="fr">-->
+<!--                            <h3>歌手:${song.singer}</h3>-->
+<!--                            <p>歌曲:${song.name}</p>-->
+<!--                            <p class="ellipsis">${song.lyric}</p>-->
+<!--                            <audio controls>-->
+<!--                            <source src="mp3/${song.path}" type="audio/mpeg"  />-->
+<!--                            </audio>-->
+<!--                        </div>-->
+<!--                    `)-->
+<!--                    $("#container").append(songDiv);-->
+<!--                }-->
+<!--            }-->
+<!--        })-->
+<!--    }-->
+<!--</script>-->

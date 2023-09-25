@@ -1,0 +1,47 @@
+/* 版心 */
+.w {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* 左右浮动 */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+
+/*清除浮动*/
+.clearfix {
+    *zoom: 1
+}
+
+
+/* 隐藏样式 */
+.hide,
+.none {
+    display: none;
+}
+
+/* 浅白色背景 */
+.bg-white {
+    background-color: #f6f6f6;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
